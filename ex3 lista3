@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/*Uma agência bancária possui dois tipos de investimentos, conforme o quadro a seguir.
+Faça uma função que receba o tipo de investimento e seu valor e que calcule e retorne o valor corrigido, de acordo com o tipo de investimento.
+Tipo     Descrição              RendimentoMensal
+1     Poupança                       3%
+2     Fundos de renda fixa           4% */
+
+float calculaValor(int t, float v);
+
+void main()
+{
+    int t;
+    float v, vf;
+    printf("\nDigite o valor inicial: ");
+    scanf("%f",&v);
+    printf("\nDigite o tipo de investimento (1 poupanca e 2 fundos de renda fixa): ");
+    scanf("%d",&t);
+    vf=calculaValor(t, v);
+    printf("\nValor corrigido: %.2f",vf);
+}
+
+float calculaValor(int t, float v){
+    float vf;
+    if(t == 1){
+        vf = v + (v*0.03);
+    }
+    else if(t==2){
+        vf = v + (v*0.04);
+    }
+    return vf;
+}
